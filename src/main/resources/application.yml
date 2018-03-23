@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------
+spring.application.name: spring-boot-service
+
+# ---------------------------------------------------------------------
+server.port: 8080
+
+# To enable SSL (requires a certificate):
+#server:
+#  port: 8443
+#  require-ssl: true
+#  ssl:
+#    key-store-type: PKCS12
+#    key-store: classpath:keystore.p12
+#    key-store-password: password
+#    key-alias: tomcat
+
+# ---------------------------------------------------------------------
+# spring actuator config
+# ---------------------------------------------------------------------
+info:
+  app: ${spring.application.name}
+  version: 1
+
+# ---------------------------------------------------------------------
+# spring persistence config for apache derby
+# To use a file persistence instead of an in-memory db use:
+#   spring.datasource.url: jdbc:derby:./database;create=true
+# ---------------------------------------------------------------------
+spring.jpa:
+  show-sql: false
+  # Hibernate ddl auto (create, create-drop, update)
+  hibernate.ddl-auto: create-drop
+  properties.hibernate.dialect: org.hibernate.dialect.DerbyDialect
+
