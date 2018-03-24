@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import es.jander.codex.sbs.data.UserInfo;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -19,6 +20,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 
+@Slf4j
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 {
     private AuthenticationManager authenticationManager;
@@ -38,7 +40,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     {
         try {
             UserInfo userInfo = objectMapper.readValue(request.getInputStream(), UserInfo.class);
-
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             userInfo.getUsername(),

@@ -18,8 +18,6 @@ public class AuthUserDetailsService implements UserDetailsService
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
     {
-        log.info("Looking for user name: {}", username);
-
         UserInfo userRecord = userInfoRepository.findByUsername(username);
         if (userRecord == null) {
             throw new UsernameNotFoundException(username);

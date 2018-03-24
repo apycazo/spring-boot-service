@@ -1,4 +1,4 @@
-package es.jander.codex.sbs.service;
+package es.jander.codex.sbs.sandbox;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import es.jander.codex.sbs.data.Duo;
@@ -6,6 +6,7 @@ import es.jander.codex.sbs.data.UserInfo;
 import es.jander.codex.sbs.persistence.UserInfoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.PostConstruct;
 
 @Slf4j
+@Profile("sandbox")
 @RestController
 public class SandboxService
 {
@@ -32,12 +34,6 @@ public class SandboxService
         userInfoRepository.save(userInfo);
     }
 
-//    @GetMapping("/login")
-//    public void login ()
-//    {
-//
-//    }
-
     @GetMapping("public/sandbox")
     public Duo<String,String> getPublicStatus ()
     {
@@ -49,6 +45,4 @@ public class SandboxService
     {
         return Duo.<String, String>builder().x("source").y("private").build();
     }
-
-
 }
