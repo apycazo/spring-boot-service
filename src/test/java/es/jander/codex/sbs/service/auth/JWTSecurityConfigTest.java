@@ -37,13 +37,14 @@ public class JWTSecurityConfigTest
 
     private @LocalServerPort Integer port;
 
-    private final String username = "test-user";
-    private final String name = "test-user-name";
-    private final String credentials = "test-user-password";
-    private final String loginURI = "/login";
-    private final String logoutURI = "/logout";
-    private final String host = "localhost";
-    private final String scheme = "http";
+    private static final String username = "test-user";
+    private static final String name = "test-user-name";
+    private static final String credentials = "test-user-password";
+    private static final String loginURI = "/login";
+    private static final String logoutURI = "/logout";
+    private static final String host = "localhost";
+    private static final String scheme = "http";
+
     private ParameterizedTypeReference<Duo<String, String>> typeReference;
 
     @Data

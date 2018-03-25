@@ -32,3 +32,13 @@ spring.jpa:
   hibernate.ddl-auto: create-drop
   properties.hibernate.dialect: org.hibernate.dialect.DerbyDialect
 
+# ---------------------------------------------------------------------
+# App custom properties (not really required, using defaults)
+# ---------------------------------------------------------------------
+app:
+  auth:
+    secret: 35y3v53892242cvhp4
+    expiration: 3_600_000
+    tokenPrefix: "Bearer "
+    headerString: Authorization
+    authenticationEndpoint: /login
