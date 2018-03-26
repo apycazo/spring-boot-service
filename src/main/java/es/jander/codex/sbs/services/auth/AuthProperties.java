@@ -1,4 +1,4 @@
-package es.jander.codex.sbs.service.auth;
+package es.jander.codex.sbs.services.auth;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

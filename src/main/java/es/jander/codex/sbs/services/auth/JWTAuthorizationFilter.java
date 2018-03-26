@@ -1,4 +1,4 @@
-package es.jander.codex.sbs.service.auth;
+package es.jander.codex.sbs.services.auth;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.http.HttpHeaders;

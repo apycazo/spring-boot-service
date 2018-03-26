@@ -1,4 +1,4 @@
-package es.jander.codex.sbs.service.auth;
+package es.jander.codex.sbs.services.auth;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import es.jander.codex.sbs.data.UserInfo;

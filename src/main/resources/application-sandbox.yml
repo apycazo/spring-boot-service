@@ -1,0 +1,9 @@
+
+app.dos:
+  enabled: true
+  bucketCapacity: 5
+  tokenSpawnTimeInMillis: 2000
+  paths:
+    - /public/**
+    - /public
+    - /login
