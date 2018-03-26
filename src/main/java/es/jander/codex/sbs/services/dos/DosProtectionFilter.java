@@ -66,15 +66,12 @@ public class DosProtectionFilter extends GenericFilterBean
             FilterChain filterChain) throws IOException, ServletException
     {
         if (paths == null || paths.isEmpty()) {
-            log.info("No paths protected");
             filterChain.doFilter(servletRequest, servletResponse);
         }
         else if (servletRequest instanceof HttpServletRequest) {
             HttpServletRequest request = (HttpServletRequest) servletRequest;
             String requestURI = request.getRequestURI();
-            log.info("Is a match?: '{}' to '{}' = {}", paths.get(0), requestURI, matcher.match(paths.get(0), requestURI));
             boolean isProtectedPath = paths.parallelStream().anyMatch(pattern -> matcher.match(pattern, requestURI));
-            log.info("Is '{}' Protected? {}", requestURI, isProtectedPath);
             if (!isProtectedPath || isRequestAcceptable()) {
                 filterChain.doFilter(servletRequest, servletResponse);
             } else {
