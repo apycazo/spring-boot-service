@@ -19,7 +19,15 @@ server.port: 8080
 # ---------------------------------------------------------------------
 info:
   app: ${spring.application.name}
-  version: 1
+  version: @pom.version@
+  contact:
+    name: Andres Picazo
+    website: https://jander.es
+    email: N/A
+  about: Spring boot service reference base code
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/
 
 # ---------------------------------------------------------------------
 # spring persistence config for apache derby
